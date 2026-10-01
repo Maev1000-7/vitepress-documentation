@@ -23,8 +23,21 @@ export default defineVersionedConfig({
     resolve: {
       alias: {
         "@": fileURLToPath(new URL("../src", import.meta.url))
-      }
+      }, 
     }, 
+  
+    ssr: { noExternal: ['@incartdev/jagm-chart', 'vuetify']}, 
+
+    css: {
+      preprocessorOptions: {
+        scss: {
+          api: 'modern-compiler',
+        },
+        sass: {
+          api: 'modern-compiler',
+        }
+      }
+    },
 
     optimizeDeps: {
       include: ['@viteplus/versions']
@@ -64,23 +77,6 @@ export default defineVersionedConfig({
         { component: "VersionSwitcher"}
       ] 
     },
-
-    // sidebar: [
-    //   root: {
-    //     text: 'Введение',
-    //     items: [
-    //       { text: 'Создание простейшего графика', link: '/incart-getting-started' },
-    //       { text: 'Страница с графиком', link: '/incart-chart-example' }
-    //     ]
-    //   },
-    //   {
-    //     text: 'Vitepress',
-    //     items: [
-    //       { text: 'Примеры разметки', link: '/markdown-examples' },
-    //       { text: 'Примеры API', link: '/api-examples' }
-    //     ]
-    //   }
-    // ],
 
     sidebar: {
       root: [

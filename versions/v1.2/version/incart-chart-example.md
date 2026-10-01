@@ -1,18 +1,19 @@
-<DoubleGrid />
+<ClientOnly>
+    <DoubleGrid />
+</ClientOnly>
+---
+<ClientOnly>
+    <SingleGrid />
+</ClientOnly>
+---
+<ClientOnly>
+    <OfflineSimpleChartDev />
+</ClientOnly>
 
 ---
-
-<SingleGrid />
-
----
-
-<OfflineSimpleChartDev />
-
-
----
-
-<SimpleOnlineChartDev />
-
+<ClientOnly>
+    <SimpleOnlineChartDev />
+</ClientOnly>
 
 
 <script setup>

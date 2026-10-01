@@ -1,28 +1,29 @@
-<DoubleGrid />
+<ClientOnly>
+    <DoubleGrid />
+</ClientOnly>
+---
+<ClientOnly>
+    <SingleGrid />
+</ClientOnly>
+---
+<ClientOnly>
+    <OfflineSimpleChartDev />
+</ClientOnly>
 
 ---
-
-<SingleGrid />
-
----
-
-<OfflineSimpleChartDev />
-
-
----
-
-<SimpleOnlineChartDev />
-
+<ClientOnly>
+    <SimpleOnlineChartDev />
+</ClientOnly>
 
 
 <script setup>
-import DoubleGrid from '../src/components/examples/ChartElements/Grid/Double/index.js'
+import DoubleGrid from '@/components/examples/ChartElements/Grid/Double/index.js'
 
-import SingleGrid from '../src/components/examples/ChartElements/Grid/Single/index.js'
+import SingleGrid from '@/components/examples/ChartElements/Grid/Single/index.js'
 
-import OfflineSimpleChartDev from '../src/components/examples/Offline/SimpleChart/index.js'
+import OfflineSimpleChartDev from '@/components/examples/Offline/SimpleChart/index.js'
 
-import SimpleOnlineChartDev from '../src/components/examples/Online/SimpleChart/index.js'
+import SimpleOnlineChartDev from '@/components/examples/Online/SimpleChart/index.js'
 
 </script>
 
