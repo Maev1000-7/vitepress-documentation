@@ -1,0 +1,25 @@
+{
+  "scripts": {
+    "docs:dev": "vitepress dev",
+    "docs:build": "vitepress build",
+    "docs:preview": "vitepress preview"
+  },
+  "dependencies": {
+    "@incartdev/signal-generator-js": "^1.10.2",
+    "@incartdev/web-graphic-lib": "1.15.0",
+    "@incartdev/web-graphic-lib-net": "^1.4.0",
+    "@incartdev/web-graphic-lib-net-msgpack": "^1.5.0",
+    "@incartdev/web-graphic-lib-vue": "^1.3.0",
+    "typescript": "^7.0.2",
+    "vuetify": "^4.2.2"
+  },
+  "devDependencies": {
+    "@types/node": "^22.20.4",
+    "@viteplus/versions": "^2.1.1",
+    "sass-embedded": "^1.105.0",
+    "vite-plugin-vuetify": "^2.1.3",
+    "vite-tsconfig-paths": "^6.1.1",
+    "vitepress": "^1.6.4",
+    "vitest": "^5.0.3"
+  }
+}

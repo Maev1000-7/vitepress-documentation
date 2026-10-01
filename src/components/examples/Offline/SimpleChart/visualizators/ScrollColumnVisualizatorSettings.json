@@ -1,0 +1,141 @@
+{
+  "schemaVersion": "3.2.0",
+  "data": {
+    "sources": [
+      {
+        "channels": [
+          {
+            "name": "ecg",
+            "frequency": 1000,
+            "maxSignalCount": 3,
+            "variants": [
+              {
+                "signals": 3
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "view": {
+    "items": [
+      {
+        "type": "canvas",
+        "items": [
+          {
+            "type": "chart:offline:base",
+            "sectors": {
+              "leftWidth": "200px",
+              "rightWidth": "10px",
+              "topHeight": "10px",
+              "bottomHeight": "10px"
+            },
+            "content": [
+              { "name": "grid", "settings": { "view": "svg-double" } },
+              {
+                "name": "meander",
+                "sector": "central",
+                "settings": {
+                  "position": {
+                    "axisX": "fromLeftToRight"
+                  }
+                }
+              },
+              {
+                "name": "scaleXLabel",
+                "sector": "central"
+              },
+              {
+                "name": "measurer",
+                "settings": {
+                  "cursors": [
+                    {
+                      "mode": "double",
+                      "name": "QRS",
+                      "rounded": true,
+                      "focusedAreaColor": "#00000000",
+                      "label": { "title": "QRS", "isBold": true, "strokeWidth": "0.4", "stroke": "#ffffff" }
+                    },
+                    {
+                      "mode": "single",
+                      "name": "QT",
+                      "focusedAreaColor": "#00000000",
+                      "label": { "title": "QT", "isBold": true, "strokeWidth": "0.4", "stroke": "#ffffff" }
+                    }
+                  ]
+                }
+              },
+              {
+                "name": "signals",
+                "settings": {
+                  "scaleX": {
+                    "type": "static",
+                    "values": [5, 10, 25, 50, 100],
+                    "currIndex": 2,
+                    "valueUnit": "с",
+                    "distanceUnit": "мм"
+                  }
+                }
+              }
+            ],
+            "sources": [
+              {
+                "channels": [
+                  {
+                    "showIsolines": false,
+                    "unit": {
+                      "text": "мВ",
+                      "scale": 1
+                    },
+                    "scaleY": {
+                      "type": "static",
+                      "values": [2.5, 5, 10, 20, 40],
+                      "currIndex": 2,
+                      "valueUnit": "мВ",
+                      "distanceUnit": "мм"
+                    },
+                    "variants": [
+                      {
+                        "isolines": [
+                          { "color": [217, 94, 212, 255] },
+                          { "color": [217, 94, 212, 255] },
+                          { "color": [217, 94, 212, 255] }
+                        ],
+                        "signals": [
+                          { "color": [0, 153, 153, 255], "drawMode": "scroll" },
+                          { "color": [0, 153, 153, 255], "drawMode": "scroll" },
+                          { "color": [0, 153, 153, 255], "drawMode": "scroll" }
+                        ],
+                        "content": [
+                          {
+                            "name": "signalLabels",
+                            "sector": "leftCentral",
+                            "settings": [{ "text": "Ecg0" }, { "text": "Ecg1" }, { "text": "Ecg2" }]
+                          },
+                          {
+                            "name": "isolineLabels",
+                            "sector": "leftCentral",
+                            "linked": [
+                              {
+                                "name": "measurer",
+                                "sector": "central",
+                                "layerZ": 2,
+                                "optional": false
+                              }
+                            ],
+                            "settings": [{}, {}, {}]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

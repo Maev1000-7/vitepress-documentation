@@ -1,0 +1,23 @@
+{
+  "schemaVersion": "1.1.0",
+  "baseFreq": 1000,
+  "pointBlockSize": 40,
+  "channels": [
+    {
+      "id": 0,
+      "name": "ecg",
+      "freq": 50,
+      "currVariant": "_default",
+      "variants": [
+        {
+          "name": "_default",
+          "signals": [
+            { "id": 0, "name": "ECG0", "type": "sin", "ampl": 1, "period": 2000, "shift": 0 },
+            { "id": 1, "name": "ECG1", "type": "sin", "ampl": 1, "period": 2000, "shift": 0 },
+            { "id": 2, "name": "ECG2", "type": "sin", "ampl": 1, "period": 2000, "shift": 0 }
+          ]
+        }
+      ]
+    }
+  ]
+}

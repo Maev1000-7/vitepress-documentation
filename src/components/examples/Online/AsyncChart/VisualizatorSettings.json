@@ -1,0 +1,168 @@
+{
+  "schemaVersion": "3.2.0",
+  "data": {
+    "sources": [
+      {
+        "channels": [
+          {
+            "id": 0,
+            "name": "ecg",
+            "frequency": 1000,
+            "maxSignalCount": 8,
+            "hasVariableIsoline": true,
+            "unit": {
+              "text": "мВ",
+              "scale": 1
+            },
+            "variants": [
+              {
+                "signals": [{ "title": "Ecg0" }]
+              }
+            ]
+          },
+          {
+            "id": 1,
+            "name": "reo",
+            "frequency": 125,
+            "maxSignalCount": 2,
+            "hasVariableIsoline": true,
+            "unit": {
+              "text": "Ом",
+              "scale": 1
+            },
+            "variants": [
+              {
+                "signals": [{ "title": "Reo1" }]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "view": {
+    "items": [
+      {
+        "type": "canvas",
+        "items": [
+          {
+            "type": "chart:online:base",
+            "synchronizedScaleX": false,
+            "sectors": {
+              "leftWidth": "50px",
+              "rightWidth": "10px",
+              "topHeight": "10px",
+              "bottomHeight": "10px"
+            },
+            "content": [
+              { "name": "grid" },
+              {
+                "name": "leadRay",
+                "settings": {
+                  "synchronized": false
+                }
+              },
+              {
+                "name": "signals",
+                "settings": {
+                  "id": 0,
+                  "scaleX": {
+                    "values": [10]
+                  }
+                }
+              }
+            ],
+            "sources": [
+              {
+                "channels": [
+                  {
+                    "id": 0,
+                    "showIsolines": true,
+                    "y": "50 %",
+                    "height": "50 %",
+                    "variants": [
+                      {
+                        "isolines": [{ "color": [217, 94, 212, 255] }],
+                        "signals": [{ "color": "#026ce5" }],
+                        "content": [
+                          {
+                            "name": "signalLabels",
+                            "sector": "leftCentral",
+                            "settings": [
+                              {
+                                "id": 0,
+                                "text": "Ecg0",
+                                "linkedPosition": true,
+                                "y": "0 px",
+                                "color": "#026ce5",
+                                "id_signal": 0
+                              }
+                            ]
+                          },
+                          {
+                            "name": "isolineLabels",
+                            "sector": "leftCentral",
+                            "settings": [
+                              {
+                                "id": 0,
+                                "linkedPosition": true,
+                                "y": "-14 px",
+                                "color": "#026ce5",
+                                "id_signal": 0
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "id": 1,
+                    "showIsolines": true,
+                    "y": "0 %",
+                    "height": "50 %",
+                    "variants": [
+                      {
+                        "isolines": [{ "color": [217, 94, 212, 255] }],
+                        "signals": [{ "color": [0, 153, 153, 255] }],
+                        "content": [
+                          {
+                            "name": "signalLabels",
+                            "sector": "leftCentral",
+                            "settings": [
+                              {
+                                "id": 0,
+                                "text": "Reo",
+                                "linkedPosition": true,
+                                "y": "0 px",
+                                "color": [0, 153, 153, 255],
+                                "id_signal": 0
+                              }
+                            ]
+                          },
+                          {
+                            "name": "isolineLabels",
+                            "sector": "leftCentral",
+                            "settings": [
+                              {
+                                "id": 0,
+                                "linkedPosition": true,
+                                "y": "-14 px",
+                                "color": [0, 153, 153, 255],
+                                "id_signal": 0
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

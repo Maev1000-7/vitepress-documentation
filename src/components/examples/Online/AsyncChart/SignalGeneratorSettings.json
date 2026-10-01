@@ -1,0 +1,49 @@
+{
+  "schemaVersion": "1.1.0",
+  "baseFreq": 1000,
+  "pointBlockSize": 40,
+  "channels": [
+    {
+      "id": 0,
+      "name": "ecg",
+      "currVariant": "1x3",
+      "freq": 1000,
+      "variants": [
+        {
+          "name": "1x3",
+          "signals": [
+            {
+              "id": 0,
+              "name": "ECG0",
+              "type": "sin",
+              "ampl": 5,
+              "period": 200,
+              "shift": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "name": "reo",
+      "freq": 125,
+      "currVariant": "2chan",
+      "variants": [
+        {
+          "name": "2chan",
+          "signals": [
+            {
+              "id": 0,
+              "name": "Reo1",
+              "type": "sin",
+              "ampl": 5,
+              "period": 200,
+              "shift": 0
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

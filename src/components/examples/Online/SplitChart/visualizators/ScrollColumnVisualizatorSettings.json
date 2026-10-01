@@ -1,0 +1,178 @@
+{
+  "schemaVersion": "3.2.0",
+  "data": {
+    "sources": [
+      {
+        "channels": [
+          {
+            "name": "ecg",
+            "unit": { "text": "мВ", "scale": 1 },
+            "frequency": 1000,
+            "maxSignalCount": 8,
+            "variants": [
+              {
+                "signals": 8
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "view": {
+    "items": [
+      {
+        "type": "canvas",
+        "items": [
+          {
+            "type": "column-grid",
+            "columnsSpace": "30px",
+            "columns": [
+              {
+                "width": "50 %",
+                "rows": [
+                  {
+                    "item": {
+                      "type": "chart:online:base",
+                      "sectors": {
+                        "bottomHeight": "20px",
+                        "topHeight": "20px",
+                        "leftWidth": "100px",
+                        "rightWidth": "0px"
+                      },
+                      "content": [
+                        { "name": "grid", "settings": { "view": "svg-double" } },
+                        { "name": "leadRay" },
+                        { "name": "meander" },
+                        {
+                          "name": "signals",
+                          "settings": {
+                            "id": 0,
+                            "scaleX": {
+                              "values": [10]
+                            }
+                          }
+                        }
+                      ],
+                      "sources": [
+                        {
+                          "channels": [
+                            {
+                              "variants": [
+                                {
+                                  "isolines": [{ "y": "80%" }, { "y": "60%" }, { "y": "40%" }, { "y": "20%" }],
+                                  "signals": [
+                                    { "id_signal": 0, "color": "#026ce5", "drawMode": "scroll" },
+                                    { "id_signal": 1, "color": "#026ce5", "drawMode": "scroll" },
+                                    { "id_signal": 2, "color": "#026ce5", "drawMode": "scroll" },
+                                    { "id_signal": 3, "color": "#026ce5", "drawMode": "scroll" }
+                                  ],
+                                  "content": [
+                                    {
+                                      "name": "signalLabels",
+                                      "sector": "leftCentral",
+                                      "settings": [
+                                        { "text": "Ecg0", "color": "#026ce5" },
+                                        { "text": "Ecg1", "color": "#026ce5" },
+                                        { "text": "Ecg2", "color": "#026ce5" },
+                                        { "text": "Ecg3", "color": "#026ce5" }
+                                      ]
+                                    },
+                                    {
+                                      "name": "isolineLabels",
+                                      "sector": "leftCentral",
+                                      "settings": [
+                                        { "color": "#026ce5" },
+                                        { "color": "#026ce5" },
+                                        { "color": "#026ce5" },
+                                        { "color": "#026ce5" }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  }
+                ]
+              },
+              {
+                "width": "50 %",
+                "rows": [
+                  {
+                    "item": {
+                      "type": "chart:online:base",
+                      "sectors": {
+                        "bottomHeight": "20px",
+                        "topHeight": "20px",
+                        "leftWidth": "100px",
+                        "rightWidth": "0px"
+                      },
+                      "content": [
+                        { "name": "grid", "settings": { "view": "svg-double" } },
+                        { "name": "leadRay" },
+                        {
+                          "name": "signals",
+                          "settings": {
+                            "id": 1,
+                            "scaleX": {
+                              "values": [10]
+                            }
+                          }
+                        }
+                      ],
+                      "sources": [
+                        {
+                          "channels": [
+                            {
+                              "variants": [
+                                {
+                                  "isolines": [{ "y": "80%" }, { "y": "60%" }, { "y": "40%" }, { "y": "20%" }],
+                                  "signals": [
+                                    { "id": 4, "color": "#026ce5", "drawMode": "scroll" },
+                                    { "id": 5, "color": "#026ce5", "drawMode": "scroll" },
+                                    { "id": 6, "color": "#026ce5", "drawMode": "scroll" },
+                                    { "id": 7, "color": "#026ce5", "drawMode": "scroll" }
+                                  ],
+                                  "content": [
+                                    {
+                                      "name": "signalLabels",
+                                      "sector": "leftCentral",
+                                      "settings": [
+                                        { "text": "Ecg4", "id_signal": 4, "color": "#026ce5" },
+                                        { "text": "Ecg5", "id_signal": 5, "color": "#026ce5" },
+                                        { "text": "Ecg6", "id_signal": 6, "color": "#026ce5" },
+                                        { "text": "Ecg7", "id_signal": 7, "color": "#026ce5" }
+                                      ]
+                                    },
+                                    {
+                                      "name": "isolineLabels",
+                                      "sector": "leftCentral",
+                                      "settings": [
+                                        { "id_signal": 4, "color": "#026ce5" },
+                                        { "id_signal": 5, "color": "#026ce5" },
+                                        { "id_signal": 6, "color": "#026ce5" },
+                                        { "id_signal": 7, "color": "#026ce5" }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}
