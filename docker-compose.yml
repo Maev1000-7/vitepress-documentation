@@ -1,0 +1,30 @@
+services:
+
+  traefik:
+    image: traefik:latest
+    command:
+      - "--providers.docker=true"
+      - "--providers.docker.exposedbydefault=false"
+      - "--entrypoints.web.address=:80"
+    ports:
+      - "8080:80"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+
+  frontend-graphs:
+    image: ghcr.io/maev1000-7/serverdocsincart:latest
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.graphs.rule=Host(`graphs.localhost`)"
+      - "traefik.http.routers.graphs.entrypoints=web"
+      - "traefik.http.services.graphs.loadbalancer.server.port=5173"
+
+  frontend-docs:
+    image: ghcr.io/maev1000-7/serverdocsincartrspress:latest
+    depends_on:
+      - frontend-graphs
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.docs.rule=Host(`docs.localhost`)"
+      - "traefik.http.routers.docs.entrypoints=web"
+      - "traefik.http.services.docs.loadbalancer.server.port=5173"

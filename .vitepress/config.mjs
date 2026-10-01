@@ -2,6 +2,8 @@ import { defineVersionedConfig } from '@viteplus/versions';
 
 import { fileURLToPath, URL } from "node:url";
 
+import vuetify from 'vite-plugin-vuetify'
+
 import fs from 'node:fs'
 
 // https://vitepress.dev/reference/site-config
@@ -25,6 +27,10 @@ export default defineVersionedConfig({
         "@": fileURLToPath(new URL("../src", import.meta.url))
       }, 
     }, 
+
+    plugins: [
+      vuetify({autoImport: true})
+    ],
   
     ssr: { noExternal: ['@incartdev/jagm-chart', 'vuetify']}, 
 
