@@ -10,7 +10,7 @@ RUN rm -rf /usr/share/nginx/html/*
 RUN rm /etc/nginx/nginx.conf
 
 COPY nginx.conf /etc/nginx/
-COPY --from=build /app/doc_build /usr/share/nginx/html/
+COPY --from=build /app/.vitepress/dist /usr/share/nginx/html/
 
 EXPOSE 5173
 
