@@ -1,30 +1,36 @@
-<ClientOnly>
-    <DoubleGrid />
-</ClientOnly>
 ---
-<ClientOnly>
-    <SingleGrid />
-</ClientOnly>
+layout: doc
 ---
-<ClientOnly>
-    <OfflineSimpleChartDev />
-</ClientOnly>
 
----
 <ClientOnly>
-    <SimpleOnlineChartDev />
+  <DoubleGrid />
+  <hr />
+  <SingleGrid />
+  <hr />
+  <OfflineSimpleChartDev />
+  <hr />
+  <SimpleOnlineChartDev />
 </ClientOnly>
-
 
 <script setup>
-import DoubleGrid from '@/components/examples/ChartElements/Grid/Double/index.js'
+import { defineAsyncComponent } from 'vue'
 
-import SingleGrid from '@/components/examples/ChartElements/Grid/Single/index.js'
+// Динамический импорт скрывает код от Node.js во время сборки SSR
+const DoubleGrid = defineAsyncComponent(() =>
+  import('@/components/examples/ChartElements/Grid/Double/index.js')
+)
 
-import OfflineSimpleChartDev from '@/components/examples/Offline/SimpleChart/index.js'
+const SingleGrid = defineAsyncComponent(() =>
+  import('@/components/examples/ChartElements/Grid/Single/index.js')
+)
 
-import SimpleOnlineChartDev from '@/components/examples/Online/SimpleChart/index.js'
+const OfflineSimpleChartDev = defineAsyncComponent(() =>
+  import('@/components/examples/Offline/SimpleChart/index.js')
+)
 
+const SimpleOnlineChartDev = defineAsyncComponent(() =>
+  import('@/components/examples/Online/SimpleChart/index.js')
+)
 </script>
 
 
