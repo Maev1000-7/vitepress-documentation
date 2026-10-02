@@ -2,6 +2,12 @@
 layout: doc
 ---
 
+
+::: info
+Версия 1.3
+:::
+
+
 <ClientOnly>
   <DoubleGrid />
   <hr />

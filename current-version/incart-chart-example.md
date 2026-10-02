@@ -2,6 +2,10 @@
 layout: doc
 ---
 
+:::tip
+Директория current version
+:::
+
 <ClientOnly>
   <DoubleGrid />
   <hr />
@@ -13,7 +17,7 @@ layout: doc
 </ClientOnly>
 
 <script setup>
-// import { defineAsyncComponent } from 'vue'
+import { defineAsyncComponent } from 'vue'
 
 // Динамический импорт скрывает код от Node.js во время сборки SSR
 const DoubleGrid = defineAsyncComponent(() =>

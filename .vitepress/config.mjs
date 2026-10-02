@@ -63,6 +63,12 @@ export default defineVersionedConfig({
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     
+    outline: {
+      level: ['deep'], // Показывает заголовки h2 и h3
+      label: 'На этой странице' // Можно изменить заголовок колонки
+    },
+
+
     nav: {
       // Последняя версия
       root: [
@@ -89,7 +95,7 @@ export default defineVersionedConfig({
         {
           text: 'Введение',
           items: [
-            { text: 'Создание простейшего графика', link: 'incart-getting-started' },
+            { text: 'Создание простейшего графика', link: '/incart-getting-started'},
             { text: 'Страница с графиком', link: '/incart-chart-example' }
           ]
         },

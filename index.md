@@ -9,10 +9,10 @@ hero:
   actions:
     - theme: brand
       text: web-lib
-      link: /markdown-examples
+      link: /incart-getting-started
     - theme: alt
       text: vitepress
-      link: /
+      link: /markdown-examples
 
 features:
   - title: Feature A
